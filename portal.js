@@ -1,10 +1,22 @@
 'use strict';
 
 // Shared configuration. Keep the partner-specific block at the top of each HTML file.
-const CALENDLY_URL = null; // Awaiting Kerim's approved 15-minute event URL.
+const CALENDLY_URL = 'https://calendly.com/kerimkfuri/atlas-meetings'; // Kerim's Atlas Meetings event. Swap here if Kerim picks another event.
 const MIN_PROJECT_USD = null; // OFF. See projectBudgetUSD() and README before enabling.
 const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwgJayLgU9KnF8lAIO8OhMCTl8xLO63RwQz2lYwq3wauG580svPVTejD393RmUOaC8C/exec';
 const CONTACT_EMAIL = null; // Awaiting the approved public contact address.
+
+// IMAGES: the only place to change a picture, for both pages.
+// Easiest swap: replace the file in assets/ keeping the same name. Or upload a new file and change its name here.
+const IMAGES = {
+  spirits: 'assets/afrohead.webp',
+  luxury: 'assets/watches.webp',
+  packaging: 'assets/materials.webp',
+  equipment: 'assets/equipment.webp',
+  apparel: 'assets/apparel.webp',
+  details: 'assets/waikulu.webp',
+  philosophy: 'assets/materials.webp'
+};
 
 // One text dictionary. Columns: EN, ES, FR, IT, PT.
 // ES / FR / IT / PT: translated drafts, TO BE REVIEWED by native-language reviewers.
@@ -186,6 +198,7 @@ function renderLanguage() {
   $('#booking-message').textContent = t(bookingState);
 }
 
+$$('[data-img]').forEach(el => { if (IMAGES[el.dataset.img]) el.src = IMAGES[el.dataset.img]; });
 $$('[data-partner]').forEach(el => { el.textContent = PARTNER[el.dataset.partner] || ''; });
 $$('.partner-photo').forEach(el => { el.src = PARTNER.photo; el.alt = PARTNER.name; });
 if ($('#partner-id')) { $('#partner-id').value = effectivePartnerId; $('#partner-name').value = PARTNER.name; }
@@ -281,6 +294,15 @@ if ($('#form')) {
   ['dragenter', 'dragover'].forEach(name => $('#drop').addEventListener(name, event => { event.preventDefault(); $('#drop').classList.add('dragging'); }));
   ['dragleave', 'drop'].forEach(name => $('#drop').addEventListener(name, event => { event.preventDefault(); $('#drop').classList.remove('dragging'); }));
   $('#drop').addEventListener('drop', event => addFiles(event.dataTransfer.files));
+  const floatBar = $('#mobile-submit');
+  if (floatBar && 'IntersectionObserver' in window) {
+    let formVisible = false, sendVisible = false;
+    const sync = () => { floatBar.hidden = !(formVisible && !sendVisible && !form.hidden && window.matchMedia('(max-width:760px)').matches); };
+    new IntersectionObserver(e => { formVisible = e[0].isIntersecting; sync(); }).observe(form);
+    new IntersectionObserver(e => { sendVisible = e[0].isIntersecting; sync(); }).observe($('#send'));
+    floatBar.querySelector('button').addEventListener('click', () => form.requestSubmit($('#send')));
+    form.addEventListener('submit', () => setTimeout(sync, 0));
+  }
   form.addEventListener('submit', async event => {
     event.preventDefault(); if ($('#send').disabled) return;
     setError(''); form.classList.add('checked');
