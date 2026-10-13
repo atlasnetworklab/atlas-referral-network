@@ -33,3 +33,18 @@
 .drop-zone{min-height:48px}
 }
 @media(max-width:760px){.form-grid>.field.half>label .optional{display:none}}
+@media(max-width:760px){
+.site-header{background:#f5f6f3}
+.journey{padding:24px 0 22px}
+.journey .section-heading h2{font-size:22px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 10px;margin-top:16px}
+.steps li{display:block;position:relative;border-top:2px solid var(--line);padding:10px 14px 0 0}
+.steps li:after{display:block;content:'→';position:absolute;right:-2px;top:8px;color:var(--orange);font-size:14px}
+.steps li:nth-child(3n):after{display:none}
+.steps li:last-child:after{display:none}
+.step-number{color:var(--orange);font-size:12px;font-weight:600;margin:0 0 4px}
+.steps h3{font-size:14px;line-height:1.25}
+.rich-journey .steps{grid-template-columns:repeat(2,1fr);gap:16px 14px}
+.rich-journey .steps li:after{display:none}
+.rich-journey .steps p{font-size:13px;margin-top:4px;line-height:1.4}
+}
