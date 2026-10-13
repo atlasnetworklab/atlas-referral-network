@@ -1,7 +1,7 @@
 'use strict';
 
 // Shared configuration. Keep the partner-specific block at the top of each HTML file.
-const CALENDLY_URL = 'https://calendly.com/kerimkfuri/atlas-meetings'; // Kerim's Atlas Meetings event. Swap here if Kerim picks another event.
+const CALENDLY_URL = 'https://calendly.com/kerimkfuri/atlas-intro-call'; // 15 minute Atlas Intro Call, created Oct 12 2026 on Kerim's word.
 const MIN_PROJECT_USD = null; // OFF. See projectBudgetUSD() and README before enabling.
 const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwgJayLgU9KnF8lAIO8OhMCTl8xLO63RwQz2lYwq3wauG580svPVTejD393RmUOaC8C/exec';
 const CONTACT_EMAIL = null; // Awaiting the approved public contact address.
@@ -121,7 +121,7 @@ const COPY = {
   bookingFallback: ['Open the booking page','Abrir la página de reserva','Ouvrir la page de réservation','Apri la pagina di prenotazione','Abrir a página de agendamento'],
   ourWork: ['OUR WORK','NUESTRO TRABAJO','NOS RÉALISATIONS','IL NOSTRO LAVORO','NOSSO TRABALHO'],
   workTitle: ['There’s Nothing We Can’t Make.','No hay nada que no podamos crear.','Rien ne nous est impossible à créer.','Non c’è nulla che non possiamo realizzare.','Não há nada que não possamos criar.'],
-  claim: ['[CLAIM PENDING KERIM CONFIRMATION]','[AFIRMACIÓN PENDIENTE DE CONFIRMACIÓN DE KERIM]','[AFFIRMATION EN ATTENTE DE CONFIRMATION PAR KERIM]','[AFFERMAZIONE IN ATTESA DI CONFERMA DA KERIM]','[AFIRMAÇÃO AGUARDANDO CONFIRMAÇÃO DE KERIM]'],
+  claim: ['2,000+ FACTORIES. 20+ YEARS IN BUSINESS.','MÁS DE 2.000 FÁBRICAS. MÁS DE 20 AÑOS EN EL NEGOCIO.','PLUS DE 2 000 USINES. PLUS DE 20 ANS D’EXPÉRIENCE.','OLTRE 2.000 FABBRICHE. OLTRE 20 ANNI DI ATTIVITÀ.','MAIS DE 2.000 FÁBRICAS. MAIS DE 20 ANOS DE NEGÓCIO.'],
   captionSpirits: ['Spirits & beverage','Bebidas y destilados','Spiritueux et boissons','Distillati e bevande','Destilados e bebidas'],
   captionLuxury: ['Luxury & presentation','Lujo y presentación','Luxe et présentation','Lusso e presentazione','Luxo e apresentação'],
   captionApparel: ['Apparel & textiles','Ropa y textiles','Habillement et textiles','Abbigliamento e tessuti','Vestuário e têxteis'],

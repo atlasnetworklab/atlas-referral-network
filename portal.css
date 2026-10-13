@@ -10,3 +10,5 @@
 .mobile-submit{position:fixed;left:0;right:0;bottom:0;z-index:25;padding:10px 15px calc(10px + env(safe-area-inset-bottom));background:#f5f6f3f2;border-top:1px solid #dfe4e0;box-shadow:0 -8px 24px #223a3b14}
 @media(min-width:761px){.mobile-submit{display:none!important}}
 @media(max-width:760px){.closing-center{display:flex;padding:28px 0}.closing-center .primary-button{margin-top:6px;width:100%}}
+
+.pending-claim{font-size:12px;letter-spacing:.12em;color:#ac775c;font-weight:600}
