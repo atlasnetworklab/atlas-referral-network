@@ -8,14 +8,15 @@ const CONTACT_EMAIL = null; // Awaiting the approved public contact address.
 
 // IMAGES: the only place to change a picture, for both pages.
 // Easiest swap: replace the file in assets/ keeping the same name. Or upload a new file and change its name here.
+const ROOT = (typeof PARTNER !== 'undefined' && PARTNER.root) ? PARTNER.root : '';
 const IMAGES = {
-  spirits: 'assets/afrohead.webp',
-  luxury: 'assets/watches.webp',
-  packaging: 'assets/materials.webp',
-  equipment: 'assets/equipment.webp',
-  apparel: 'assets/apparel.webp',
-  details: 'assets/waikulu.webp',
-  philosophy: 'assets/materials.webp'
+  spirits: ROOT + 'assets/afrohead.webp',
+  luxury: ROOT + 'assets/watches.webp',
+  packaging: ROOT + 'assets/materials.webp',
+  equipment: ROOT + 'assets/equipment.webp',
+  apparel: ROOT + 'assets/apparel.webp',
+  details: ROOT + 'assets/waikulu.webp',
+  philosophy: ROOT + 'assets/materials.webp'
 };
 
 // One text dictionary. Columns: EN, ES, FR, IT, PT.
