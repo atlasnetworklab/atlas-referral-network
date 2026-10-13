@@ -2,7 +2,7 @@
 
 // Shared configuration. Keep the partner-specific block at the top of each HTML file.
 const CALENDLY_URL = 'https://calendly.com/kerimkfuri/atlas-intro-call'; // 15 minute Atlas Intro Call, created Oct 12 2026 on Kerim's word.
-const MIN_PROJECT_USD = null; // OFF. See projectBudgetUSD() and README before enabling.
+const MIN_PROJECT_USD = 25000; // Kerim's minimum project size (Oct 12 2026). One line to change.
 const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwgJayLgU9KnF8lAIO8OhMCTl8xLO63RwQz2lYwq3wauG580svPVTejD393RmUOaC8C/exec';
 const CONTACT_EMAIL = null; // Awaiting the approved public contact address.
 
@@ -67,16 +67,33 @@ const COPY = {
   quantity: ['Target quantity','Cantidad prevista','Quantité souhaitée','Quantità prevista','Quantidade prevista'],
   quantityPh: ['Select quantity','Selecciona la cantidad','Choisir une quantité','Seleziona la quantità','Selecione a quantidade'],
   quantityError: ['Please select a target quantity.','Selecciona la cantidad prevista.','Veuillez choisir la quantité souhaitée.','Seleziona la quantità prevista.','Selecione a quantidade prevista.'],
-  qty1: ['Under 1,000 units','Menos de 1.000 unidades','Moins de 1 000 unités','Meno di 1.000 unità','Menos de 1.000 unidades'],
-  qty2: ['1,000 – 10,000 units','1.000 – 10.000 unidades','1 000 – 10 000 unités','1.000 – 10.000 unità','1.000 – 10.000 unidades'],
-  qty3: ['10,000 – 50,000 units','10.000 – 50.000 unidades','10 000 – 50 000 unités','10.000 – 50.000 unità','10.000 – 50.000 unidades'],
-  qty4: ['50,000+ units','Más de 50.000 unidades','50 000 unités ou plus','Oltre 50.000 unità','Mais de 50.000 unidades'],
-  qty5: ['Not sure yet','Aún no lo sé','Je ne sais pas encore','Non so ancora','Ainda não sei'],
+  qty1: ['Under 500 units','Menos de 500 unidades','Moins de 500 unités','Meno di 500 unità','Menos de 500 unidades'],
+  qty2: ['500 to 1,000 units','De 500 a 1.000 unidades','De 500 à 1 000 unités','Da 500 a 1.000 unità','De 500 a 1.000 unidades'],
+  qty3: ['1,000 to 2,500 units','De 1.000 a 2.500 unidades','De 1 000 à 2 500 unités','Da 1.000 a 2.500 unità','De 1.000 a 2.500 unidades'],
+  qty4: ['2,500 to 5,000 units','De 2.500 a 5.000 unidades','De 2 500 à 5 000 unités','Da 2.500 a 5.000 unità','De 2.500 a 5.000 unidades'],
+  qty5: ['5,000 to 10,000 units','De 5.000 a 10.000 unidades','De 5 000 à 10 000 unités','Da 5.000 a 10.000 unità','De 5.000 a 10.000 unidades'],
+  qty6: ['10,000 to 25,000 units','De 10.000 a 25.000 unidades','De 10 000 à 25 000 unités','Da 10.000 a 25.000 unità','De 10.000 a 25.000 unidades'],
+  qty7: ['25,000 to 50,000 units','De 25.000 a 50.000 unidades','De 25 000 à 50 000 unités','Da 25.000 a 50.000 unità','De 25.000 a 50.000 unidades'],
+  qty8: ['50,000+ units','Más de 50.000 unidades','50 000 unités ou plus','Oltre 50.000 unità','Mais de 50.000 unidades'],
+  qty9: ['Not sure yet','Aún no lo sé','Je ne sais pas encore','Non so ancora','Ainda não sei'],
+  budget: ['Estimated budget','Presupuesto estimado','Budget estimé','Budget stimato','Orçamento estimado'],
+  budgetPh: ['Select a range','Selecciona un rango','Choisir une fourchette','Seleziona una fascia','Selecione uma faixa'],
+  budgetError: ['Please select a budget range, or Not sure yet.','Selecciona un rango, o Aún no lo sé.','Choisissez une fourchette, ou Je ne sais pas encore.','Seleziona una fascia, o Non so ancora.','Selecione uma faixa, ou Ainda não sei.'],
+  bud1: ['Under $10K','Menos de 10.000 USD','Moins de 10 000 USD','Meno di 10.000 USD','Menos de 10.000 USD'],
+  bud2: ['$10K to $25K','De 10.000 a 25.000 USD','De 10 000 à 25 000 USD','Da 10.000 a 25.000 USD','De 10.000 a 25.000 USD'],
+  bud3: ['$25K to $50K','De 25.000 a 50.000 USD','De 25 000 à 50 000 USD','Da 25.000 a 50.000 USD','De 25.000 a 50.000 USD'],
+  bud4: ['$50K to $100K','De 50.000 a 100.000 USD','De 50 000 à 100 000 USD','Da 50.000 a 100.000 USD','De 50.000 a 100.000 USD'],
+  bud5: ['$100K to $250K','De 100.000 a 250.000 USD','De 100 000 à 250 000 USD','Da 100.000 a 250.000 USD','De 100.000 a 250.000 USD'],
+  bud6: ['$250K+','Más de 250.000 USD','250 000 USD ou plus','Oltre 250.000 USD','Mais de 250.000 USD'],
+  bud7: ['Not sure yet','Aún no lo sé','Je ne sais pas encore','Non so ancora','Ainda não sei'],
+  unitPrice: ['Target price per unit (USD)','Precio objetivo por unidad (USD)','Prix cible par unité (USD)','Prezzo obiettivo per unità (USD)','Preço alvo por unidade (USD)'],
+  unitPriceHint: ['(only if you know it)','(solo si lo sabes)','(seulement si vous le savez)','(solo se lo sai)','(só se souber)'],
+  unitPricePh: ['For example 2.50','Por ejemplo 2.50','Par exemple 2.50','Ad esempio 2.50','Por exemplo 2.50'],
   timeline: ['When do you need it?','¿Cuándo lo necesitas?','Pour quand en avez-vous besoin ?','Quando ti serve?','Para quando você precisa?'],
   timelinePh: ['Select timeline','Selecciona un plazo','Choisir un délai','Seleziona una tempistica','Selecione um prazo'],
   time1: ['As soon as possible','Lo antes posible','Dès que possible','Il prima possibile','O mais rápido possível'],
   time2: ['Within 3 months','En los próximos 3 meses','Dans les 3 mois','Entro 3 mesi','Dentro de 3 meses'],
-  time3: ['3 – 6 months','De 3 a 6 meses','Dans 3 à 6 mois','Tra 3 e 6 mesi','De 3 a 6 meses'],
+  time3: ['3 to 6 months','De 3 a 6 meses','Dans 3 à 6 mois','Tra 3 e 6 mesi','De 3 a 6 meses'],
   time4: ['6 months or more','6 meses o más','Dans 6 mois ou plus','Tra 6 mesi o più','6 meses ou mais'],
   time5: ['Still planning','Aún en planificación','Encore en réflexion','Ancora in fase di pianificazione','Ainda em planejamento'],
   upload: ['Add project files','Añade archivos del proyecto','Ajouter des fichiers','Aggiungi file del progetto','Adicionar arquivos do projeto'],
@@ -89,7 +106,7 @@ const COPY = {
   thanksBody: ['Talk it through with Atlas, or get to know what we can make together.','Habla con Atlas o descubre lo que podemos crear juntos.','Échangez avec Atlas ou découvrez ce que nous pouvons créer ensemble.','Parlane con Atlas o scopri cosa possiamo realizzare insieme.','Converse com a Atlas ou descubra o que podemos criar juntos.'],
   book: ['BOOK YOUR CALL','RESERVA TU LLAMADA','RÉSERVEZ UN APPEL','PRENOTA UNA CHIAMATA','AGENDE SUA CHAMADA'],
   explore: ['EXPLORE ATLAS','DESCUBRE ATLAS','DÉCOUVREZ ATLAS','SCOPRI ATLAS','EXPLORE A ATLAS'],
-  minimum: ['Thank you for your interest. This project falls below our current minimum. Our team can help you consider a suitable next step.','Gracias por tu interés. Este proyecto está por debajo de nuestro mínimo actual. Nuestro equipo puede ayudarte a considerar un próximo paso adecuado.','Merci de votre intérêt. Ce projet est inférieur à notre minimum actuel. Notre équipe peut vous aider à envisager une suite adaptée.','Grazie per il tuo interesse. Questo progetto è al di sotto della nostra soglia minima attuale. Il nostro team può aiutarti a valutare un passo successivo adatto.','Obrigado pelo interesse. Este projeto está abaixo do nosso mínimo atual. Nossa equipe pode ajudar você a considerar um próximo passo adequado.'],
+  minimum: ['Our projects usually start around $25,000. Our team will review your details and reply by email with the best next step for you.','Nuestros proyectos suelen comenzar alrededor de 25.000 USD. Nuestro equipo revisará tus datos y te responderá por correo con el mejor siguiente paso.','Nos projets commencent généralement autour de 25 000 USD. Notre équipe étudiera vos informations et vous répondra par e-mail avec la meilleure suite.','I nostri progetti partono di solito da circa 25.000 USD. Il nostro team esaminerà i tuoi dati e ti risponderà via email con il passo successivo migliore.','Nossos projetos costumam começar em torno de 25.000 USD. Nossa equipe vai analisar seus dados e responder por e-mail com o melhor próximo passo.'],
   reviewSent: ['Review only. Nothing was sent.','Solo vista previa: no se ha enviado nada.','Aperçu uniquement. Aucun envoi effectué.','Solo anteprima: non è stato inviato nulla.','Apenas prévia. Nada foi enviado.'],
   sent: ['Request sent. Delivery has not been independently confirmed.','Solicitud enviada. La entrega no se ha confirmado de forma independiente.','Demande envoyée. La réception n’a pas été confirmée indépendamment.','Richiesta inviata. La ricezione non è stata confermata in modo indipendente.','Solicitação enviada. O recebimento não foi confirmado de forma independente.'],
   sendError: ['We couldn’t send your project. Your details are still here; please check your connection and try again.','No pudimos enviar tu proyecto. Tus datos siguen aquí; revisa tu conexión e inténtalo de nuevo.','Impossible d’envoyer votre projet. Vos informations sont conservées ici ; vérifiez votre connexion et réessayez.','Non è stato possibile inviare il progetto. I tuoi dati sono ancora qui; controlla la connessione e riprova.','Não foi possível enviar seu projeto. Seus dados continuam aqui; verifique sua conexão e tente novamente.'],
@@ -256,9 +273,19 @@ function fileToBase64(file) {
   });
 }
 
-// The approved SYP has no budget field. Never infer project value from unit quantity.
-// Supply an approved numeric budget source here before enabling MIN_PROJECT_USD.
-function projectBudgetUSD(_payload) { return null; }
+// Project size, Kerim's rule with Alen's budget field (Oct 12 2026).
+// 1. A chosen budget range decides: its top below the minimum means a small project.
+// 2. Budget Not sure yet but a unit price given: price x the TOP of the quantity bracket.
+// 3. Nothing known: null, never blocked (the intro call judges it).
+const BUDGET_TOP = { 'Under $10K': 10000, '$10K to $25K': 25000, '$25K to $50K': 50000, '$50K to $100K': 100000, '$100K to $250K': 250000, '$250K+': Infinity };
+const QTY_TOP = { 'Under 500 units': 500, '500 to 1,000 units': 1000, '1,000 to 2,500 units': 2500, '2,500 to 5,000 units': 5000, '5,000 to 10,000 units': 10000, '10,000 to 25,000 units': 25000, '25,000 to 50,000 units': 50000, '50,000+ units': Infinity };
+function projectBudgetUSD(payload) {
+  if (payload.budget in BUDGET_TOP) { const top = BUDGET_TOP[payload.budget]; return top === 25000 ? 24999 : top - 1; }
+  const price = parseFloat(String(payload.unit_price || '').replace(/[^0-9.]/g, ''));
+  const qty = QTY_TOP[payload.quantity];
+  if (Number.isFinite(price) && price > 0 && qty) return price * qty;
+  return null;
+}
 function belowMinimum(value, minimum) {
   return typeof minimum === 'number' && Number.isFinite(minimum) && minimum > 0 &&
     typeof value === 'number' && Number.isFinite(value) && value >= 0 && value < minimum;
@@ -316,7 +343,7 @@ if ($('#form')) {
       const payload = {
         name: val('name'), email: val('email'), company: val('company'), phone: val('phone'),
         product: val('product'), category: val('cat') === 'Other' ? val('other') : val('cat'),
-        description: val('desc'), quantity: val('qty'), timeline: val('when'),
+        description: val('desc'), quantity: val('qty'), budget: val('budget'), unit_price: val('price'), timeline: val('when'),
         submittedAt: new Date().toISOString(),
         files: await Promise.all(selectedFiles.filter(item => !item.blocked).map(item => fileToBase64(item.file))),
         partner_id: effectivePartnerId, partner_name: PARTNER.name
@@ -327,7 +354,7 @@ if ($('#form')) {
       }
       rememberInvitee(payload.name, payload.email);
       const gated = belowMinimum(projectBudgetUSD(payload), MIN_PROJECT_USD);
-      $('#next-actions').hidden = gated; $('#minimum-message').hidden = !gated;
+      $$('#next-actions [data-book]').forEach(b => { b.hidden = gated; }); $('#next-actions').classList.toggle('single', gated); $('#minimum-message').hidden = !gated; $('#thanks-body').hidden = gated;
       submitted = true; $('#sending').hidden = true; $('#done').hidden = false;
       $('#submission-note').textContent = t(PREVIEW_MODE ? 'reviewSent' : 'sent');
       $('#thanks-title').focus({ preventScroll: true });

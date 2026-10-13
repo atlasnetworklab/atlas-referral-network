@@ -12,3 +12,6 @@
 @media(max-width:760px){.closing-center{display:flex;padding:28px 0}.closing-center .primary-button{margin-top:6px;width:100%}}
 
 .pending-claim{font-size:12px;letter-spacing:.12em;color:#ac775c;font-weight:600}
+
+.next-actions.single{grid-template-columns:1fr;width:min(100%,300px)}
+#minimum-message{color:var(--ink);font-size:15px;max-width:520px;margin-top:6px}
